@@ -4,8 +4,9 @@ import {
     UbitsModal,
     UbitsModalHeader,
     UbitsModalContent,
-    UbitsModalFooter,
+    UbitsModalFooter, UbitsInput, UbitsTextarea,
 } from '@ubits/lxp-components-react';
+import { InputTypeEnum } from '@ubits/lxp-components'
 
 interface CreateModalProps {
     open: boolean;
@@ -18,14 +19,34 @@ const CreateBenefitModal = ({
                                  }: CreateModalProps) => {
     return (
         <UbitsModal open={open} onCloseModal={() => accept()}>
-            <UbitsModalHeader headerTitle="¡Recuerda activar el mapa!" />
+            <UbitsModalHeader headerTitle="¡Crea tu beneficio!" />
             <UbitsModalContent>
-                <div>
-                    <div>
-                        <p className="ubits-txt-paragraph-1 paragraph-color">
-                            Crear beneficio
-                        </p>
-                    </div>
+                <div className="create-benefit-modal">
+                    <UbitsInput
+                        label={'Titulo del beneficio'}
+                        required
+                    />
+
+                    <UbitsTextarea
+                        label="Descripción"
+                        maxLength={400}
+                        required
+                        rows={4}
+                        style={{ width: '100%' }}
+                    />
+
+                    <UbitsInput
+                        label={'Valor'}
+                        required
+                    />
+
+                    <UbitsInput
+                        label={'Vigencia'}
+                        required
+                        type={InputTypeEnum.Date}
+                    />
+
+
                 </div>
             </UbitsModalContent>
             <UbitsModalFooter>

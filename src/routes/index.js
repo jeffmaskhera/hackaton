@@ -4,9 +4,8 @@ import Home from "../pages/home/home";
 import Favorites from "../pages/favorites/favorites";
 import Header from "../components/header/header";
 import {RoutesEnum} from "./routes.enum";
-import ContactUs from "../pages/contact/contact-us";
-
-
+import StudentPage from "../pages/student/student-page";
+import { Link } from "react-router-dom";
 
 const Routes =()=> {
 
@@ -15,8 +14,7 @@ const Routes =()=> {
             <Header />
             <Switch>
                 <Route exact path={RoutesEnum.Home} component={Home} />
-                <Route exact path={RoutesEnum.Favorites} component={Favorites} />
-                <Route exact path={RoutesEnum.Contact} component={ContactUs} />
+                <Route exact path={RoutesEnum.Student} component={StudentPage} />
             </Switch>
         </BrowserRouter>
     )

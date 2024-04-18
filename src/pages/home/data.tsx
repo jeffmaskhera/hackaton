@@ -87,3 +87,68 @@ export const benefitTable:any = [
         description: "Posibilidad de acceder a cursos y capacitaciones para seguir aprendiendo."
     }
 ]
+
+
+export const UserTableHeaderHistory: any = [
+    {
+        id: 'user',
+        text: 'Usuario',
+        align: 'left',
+    },
+
+    {
+        id: 'date',
+        text: 'Fecha',
+        align: 'left',
+    },
+    {
+        id: 'benefit',
+        text: 'Beneficio',
+        align: 'left',
+    },
+    {
+        id: 'coin',
+        text: 'Precio',
+        align: 'left',
+    }
+];
+
+
+
+export const historicTable:any = [
+    {
+        id: 1,
+        user: "Jefrey Sánchez",
+        date: "15-05-2024",
+        benefit: "Se ganó una camioneta 0km marca Volvo",
+        coin: '1000 monedas'
+    },
+    {
+        id: 2,
+        user: "María Rodríguez",
+        date: "20-06-2024",
+        benefit: "Recibió un bono por desempeño excepcional",
+        coin: '500 monedas'
+    },
+    {
+        id: 3,
+        user: "Pedro López",
+        date: "10-07-2024",
+        benefit: "Aprovechó descuentos corporativos en viajes",
+        coin: '300 monedas'
+    },
+    {
+        id: 4,
+        user: "Ana García",
+        date: "25-08-2024",
+        benefit: "Obtuvo un ascenso a un nuevo puesto",
+        coin: '700 monedas'
+    },
+    {
+        id: 5,
+        user: "Carlos Martínez",
+        date: "05-09-2024",
+        benefit: "Participó en el programa de bienestar y ganó un viaje de vacaciones",
+        coin: '800 monedas'
+    }
+];

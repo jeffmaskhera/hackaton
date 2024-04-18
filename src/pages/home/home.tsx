@@ -64,11 +64,13 @@ const Home =()=> {
     return (
         <div className="home-page">
 
+            <div>
+                <h1>Hackaton</h1>
+                <h2>Mis beneficios</h2>
+            </div>
 
 
-            <h1>Hackaton</h1>
 
-            <h2>Mis beneficios</h2>
 
 
 

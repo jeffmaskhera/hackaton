@@ -7,63 +7,66 @@ import ItemCharacter from "../../components/item-character/item-character";
 import {CharactersModel} from "../../domain/characters/characters.model";
 import Modal from "../../components/modal/modal";
 import Spinner from "../../components/spinner/spinner";
+import {UserTableHeader} from "./data";
+import {UbitsCheckbox, UbitsTable} from "@ubits/lxp-components-react";
+import {createRoot} from "react-dom/client";
 
 
 
 const Home =()=> {
 
-    const [characters, setCharacters] = useState<CharactersModel[]>()
-    const [selectCharacter, setSelectCharacter] = useState<CharactersModel>(new CharactersModel())
-    const [page, setPage] = useState<number>(1)
-    const [showModal, setShowModal] = useState<boolean>(false)
-    const [showSpinner, setShowSpinner] = useState<boolean>(true)
+    const benefit = useState<any>([
+        {
+            benefit: "Gimnasio",
+            description: "tienes un gimnasio mensual"
+        },
+        {
+            benefit: "Gimnasio",
+            description: "tienes un gimnasio mensual"
+        }
+    ])
 
-    const getInfo = async (page: number)=> {
-        setShowSpinner(true)
 
-        const response = await getCharacters(page)
-        // const response = await new Promise<CharactersModel[]>((resolve) => {
-        //     setTimeout(() => {
-        //         resolve(getCharacters(page));
-        //     }, 1000); // Simula una demora de 2 segundos
-        // });
-        setCharacters(response)
-        setShowSpinner(false)
-    }
+    const UserTableTemplate: any = {
+        checkbox: (args: any) => {
+            const checkbox = (
+                <UbitsCheckbox
+                    keyId={args?.data?.id_user}
+                />
+            );
+            const div = document.createElement('div');
+            const intDiv = createRoot(div);
+            intDiv.render(checkbox);
+            return div;
+        },
+    };
 
-    const paginatorSettings =(num: number)=> {
-        setPage(num)
-    }
 
-    useEffect(() => {
-        getInfo(page);
-    }, [page])
 
-    const renderPaginator = useMemo( () => {
-        return <Paginator
-            currentPage={page}
-            paginatorSettings={paginatorSettings}
-        />
-    }, [page])
 
-    const settingCharacterSelect =(select: CharactersModel)=> {
-        setSelectCharacter(select)
 
-    }
-
-    const actionModal =()=> {
-        setShowModal(!showModal)
-    }
 
 
     return (
         <div className="home-page">
 
-            {showSpinner && <Spinner/>}
+
 
             <h1>Hackaton</h1>
 
+            <h2>Mis beneficios</h2>
 
+
+            {benefit && benefit.length >= 0 && (
+                <UbitsTable
+                    sticky={true}
+                    header={UserTableHeader as any}
+                    data={benefit}
+                    template={UserTableTemplate}
+                    headerColor={'tertiary' as any}
+                    style={{ width: '100%', marginBottom: '20px' }}
+                />
+            )}
 
 
         </div>

@@ -1,7 +1,7 @@
-import React, {useMemo} from 'react';
+import React, { useMemo } from 'react';
 import ReactDOM from 'react-dom/client';
 import { useState, useEffect } from 'react'
-import {benefitTable, UserTableHeader} from "./data";
+import { benefitTable, UserTableHeader } from "./data";
 import {
     UbitsButton,
     UbitsCheckbox,
@@ -11,12 +11,13 @@ import {
     UbitsTabView
 } from "@ubits/lxp-components-react";
 import { ButtonColorEnum, ButtonSizeEnum } from '@ubits/lxp-components';
-import {createRoot} from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import CreateBenefitModal from "./modal/create-modal";
+import Objetivos from 'pages/objetivos/objetivos';
 
 
 
-const Home =()=> {
+const Home = () => {
 
     const [showModal, setShowModal] = useState<boolean>(false);
 
@@ -63,11 +64,11 @@ const Home =()=> {
         },
     };
 
-    const create =()=> {
+    const create = () => {
 
     }
 
-    const actionsModal =()=> {
+    const actionsModal = () => {
         setShowModal(!showModal)
     }
 
@@ -110,9 +111,7 @@ const Home =()=> {
 
                 <UbitsTabPanel header="Objetivos">
                     <>
-                      <div>
-                          Objetivos
-                      </div>
+                        <Objetivos />
                     </>
 
                 </UbitsTabPanel>

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import ReactDOM from 'react-dom/client';
 import { useState, useEffect } from 'react'
-import { benefitTable, UserTableHeader } from "./data";
+import {benefitTable, historicTable, UserTableHeader, UserTableHeaderHistory} from "./data";
 import {
     UbitsButton,
     UbitsCheckbox,
@@ -115,6 +115,26 @@ const Home = () => {
                     </>
 
                 </UbitsTabPanel>
+
+
+                <UbitsTabPanel header="Históricos">
+                    <>
+                        {benefitTable && benefitTable.length >= 0 && (
+                            <UbitsTable
+                                sticky={true}
+                                header={UserTableHeaderHistory as any}
+                                data={historicTable}
+                                template={UserTableTemplate}
+                                headerColor={'tertiary' as any}
+                                style={{ width: '100%', marginBottom: '20px' }}
+                            />
+                        )}
+                    </>
+
+                </UbitsTabPanel>
+
+
+
             </UbitsTabView>
 
 

@@ -12,7 +12,7 @@ const Routes =()=> {
 
     return (
         <BrowserRouter>
-            {/*<Header />*/}
+            <Header />
             <Switch>
                 <Route exact path={RoutesEnum.Home} component={Home} />
                 <Route exact path={RoutesEnum.Favorites} component={Favorites} />

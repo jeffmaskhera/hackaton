@@ -1,22 +1,17 @@
 import React from 'react'
 
-// @ts-ignore
-import { Link } from "react-router-dom";
-import {RoutesEnum} from "../../routes/routes.enum";
-
-
-const Header =()=> {
+const Header = () => {
     return (
-        <>
-            <header>
-                <div className="links">
-                    <Link to={RoutesEnum.Home}>Home</Link>
-                    <Link to={RoutesEnum.Favorites}>Favorites</Link>
-                    <Link to={RoutesEnum.Contact}>Contact us</Link>
+        <header>
+            <div className="header">
+                <div className="flex h-[70px] px-[15px]">
+                    <div className="flex items-center">
+                        <img src={'/images/ubitsBasic.png'} width={'75px'} height={'25px'} alt="" />
+                    </div>
                 </div>
-            </header>
-            <div className="empty-space-header"></div>
-        </>
+            </div>
+        </header>
+
     )
 }
 

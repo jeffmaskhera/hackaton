@@ -2,7 +2,14 @@ import React, {useMemo} from 'react';
 import ReactDOM from 'react-dom/client';
 import { useState, useEffect } from 'react'
 import {benefitTable, UserTableHeader} from "./data";
-import {UbitsButton, UbitsCheckbox, UbitsDropdown, UbitsTable} from "@ubits/lxp-components-react";
+import {
+    UbitsButton,
+    UbitsCheckbox,
+    UbitsDropdown,
+    UbitsTable,
+    UbitsTabPanel,
+    UbitsTabView
+} from "@ubits/lxp-components-react";
 import { ButtonColorEnum, ButtonSizeEnum } from '@ubits/lxp-components';
 import {createRoot} from "react-dom/client";
 import CreateBenefitModal from "./modal/create-modal";
@@ -75,7 +82,6 @@ const Home =()=> {
             <div className="home-page__grid-top">
                 <div>
                     <h1>Hackaton</h1>
-                    <h2>Mis beneficios</h2>
                 </div>
                 <UbitsButton
                     text="Crear"
@@ -85,20 +91,36 @@ const Home =()=> {
             </div>
 
 
+            <UbitsTabView tabStyle={'secondary-tab' as any}>
+                <UbitsTabPanel header="Beneficios">
+                    <>
+                        {benefitTable && benefitTable.length >= 0 && (
+                            <UbitsTable
+                                sticky={true}
+                                header={UserTableHeader as any}
+                                data={benefitTable}
+                                template={UserTableTemplate}
+                                headerColor={'tertiary' as any}
+                                style={{ width: '100%', marginBottom: '20px' }}
+                            />
+                        )}
+                    </>
+
+                </UbitsTabPanel>
+
+                <UbitsTabPanel header="Objetivos">
+                    <>
+                      <div>
+                          Objetivos
+                      </div>
+                    </>
+
+                </UbitsTabPanel>
+            </UbitsTabView>
 
 
 
 
-            {benefitTable && benefitTable.length >= 0 && (
-                <UbitsTable
-                    sticky={true}
-                    header={UserTableHeader as any}
-                    data={benefitTable}
-                    template={UserTableTemplate}
-                    headerColor={'tertiary' as any}
-                    style={{ width: '100%', marginBottom: '20px' }}
-                />
-            )}
 
             {showModal && (
                 <CreateBenefitModal

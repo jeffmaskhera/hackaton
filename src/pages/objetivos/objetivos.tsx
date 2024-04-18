@@ -79,7 +79,7 @@ const Objetivos = () => {
 
             <div className="objetivos-page__grid-top">
                 <UbitsButton
-                    text="Crear"
+                    text="Crear objetivos"
                     onClick={actionsModal}
                 />
 

@@ -81,13 +81,7 @@ const Home = () => {
         <div className="home-page">
 
             <div className="home-page__grid-top">
-                <div>
-                    <h1>Hackaton</h1>
-                </div>
-                <UbitsButton
-                    text="Crear"
-                    onClick={actionsModal}
-                />
+                <h1>Perks Hub</h1>
 
             </div>
 
@@ -95,6 +89,15 @@ const Home = () => {
             <UbitsTabView tabStyle={'secondary-tab' as any}>
                 <UbitsTabPanel header="Beneficios">
                     <>
+                        <div className="objetivos-page__grid-top">
+                            <UbitsButton
+                                text="Crear beneficios"
+                                onClick={actionsModal}
+                            />
+
+                        </div>
+
+
                         {benefitTable && benefitTable.length >= 0 && (
                             <UbitsTable
                                 sticky={true}

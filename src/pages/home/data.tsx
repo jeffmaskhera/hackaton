@@ -27,11 +27,6 @@ export const UserTableHeader: any = [
 
 export const benefitTable:any = [
     {
-        id: 0,
-        benefit: "Gimnasio",
-        description: "Te pagamos la mensualidad de tu gimnasio"
-    },
-    {
         id: 1,
         benefit: "Gimnasio",
         description: "tienes un gimnasio mensual"

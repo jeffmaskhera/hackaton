@@ -5,12 +5,13 @@ import {benefitTable, UserTableHeader} from "./data";
 import {UbitsButton, UbitsCheckbox, UbitsDropdown, UbitsTable} from "@ubits/lxp-components-react";
 import { ButtonColorEnum, ButtonSizeEnum } from '@ubits/lxp-components';
 import {createRoot} from "react-dom/client";
+import CreateBenefitModal from "./modal/create-modal";
 
 
 
 const Home =()=> {
 
-
+    const [showModal, setShowModal] = useState<boolean>(false);
 
     const UserTableTemplate: any = {
         checkbox: (args: any) => {
@@ -59,6 +60,10 @@ const Home =()=> {
 
     }
 
+    const actionsModal =()=> {
+        setShowModal(!showModal)
+    }
+
 
 
 
@@ -74,7 +79,7 @@ const Home =()=> {
                 </div>
                 <UbitsButton
                     text="Crear"
-                    onClick={create}
+                    onClick={actionsModal}
                 />
 
             </div>
@@ -92,6 +97,13 @@ const Home =()=> {
                     template={UserTableTemplate}
                     headerColor={'tertiary' as any}
                     style={{ width: '100%', marginBottom: '20px' }}
+                />
+            )}
+
+            {showModal && (
+                <CreateBenefitModal
+                    open={showModal}
+                    accept={actionsModal}
                 />
             )}
 

@@ -2,7 +2,7 @@ import React, {useMemo} from 'react';
 import ReactDOM from 'react-dom/client';
 import { useState, useEffect } from 'react'
 import {benefitTable, UserTableHeader} from "./data";
-import {UbitsCheckbox, UbitsDropdown, UbitsTable} from "@ubits/lxp-components-react";
+import {UbitsButton, UbitsCheckbox, UbitsDropdown, UbitsTable} from "@ubits/lxp-components-react";
 import { ButtonColorEnum, ButtonSizeEnum } from '@ubits/lxp-components';
 import {createRoot} from "react-dom/client";
 
@@ -55,6 +55,9 @@ const Home =()=> {
         },
     };
 
+    const create =()=> {
+
+    }
 
 
 
@@ -64,11 +67,20 @@ const Home =()=> {
     return (
         <div className="home-page">
 
+            <div className="home-page__grid-top">
+                <div>
+                    <h1>Hackaton</h1>
+                    <h2>Mis beneficios</h2>
+                </div>
+                <UbitsButton
+                    text="Crear"
+                    onClick={create}
+                />
+
+            </div>
 
 
-            <h1>Hackaton</h1>
 
-            <h2>Mis beneficios</h2>
 
 
 

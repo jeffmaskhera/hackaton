@@ -3,6 +3,12 @@
   padding: 20px;
   margin: auto;
   padding-top: 60px;
+
+  &__grid-top {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+  }
 }
 
 @media (max-width: 900px) {

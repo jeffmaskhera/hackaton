@@ -1,25 +1,15 @@
 import React, {useMemo} from 'react';
+import ReactDOM from 'react-dom/client';
 import { useState, useEffect } from 'react'
-import {UserTableHeader} from "./data";
-import {UbitsCheckbox, UbitsTable} from "@ubits/lxp-components-react";
+import {benefitTable, UserTableHeader} from "./data";
+import {UbitsCheckbox, UbitsDropdown, UbitsTable} from "@ubits/lxp-components-react";
+import { ButtonColorEnum, ButtonSizeEnum } from '@ubits/lxp-components';
 import {createRoot} from "react-dom/client";
 
 
 
 const Home =()=> {
 
-    const benefit = useState<any[]>([
-        {
-            benefit: "Gimnasio",
-            description: "tienes un gimnasio mensual"
-        },
-        {
-            benefit: "Gimnasio",
-            description: "tienes un gimnasio mensual"
-        }
-    ])
-
-    console.log("benefit", benefit)
 
 
     const UserTableTemplate: any = {
@@ -32,6 +22,35 @@ const Home =()=> {
             const div = document.createElement('div');
             const intDiv = createRoot(div);
             intDiv.render(checkbox);
+            return div;
+        },
+
+        actions: (args: any) => {
+            const options = [
+                {
+                    id: 0,
+                    label: 'Eliminar',
+                },
+                {
+                    id: 1,
+                    label: 'Editar',
+                },
+            ];
+
+
+
+            const dropdown = (
+                <UbitsDropdown
+                    data={options}
+                    id={args?.data?.id}
+                    titleButton="Acciones"
+                    sizeButton={ButtonSizeEnum.M}
+                    colorButton={ButtonColorEnum.Tertiary}
+                />
+            );
+            const div = document.createElement('div');
+            const intDiv = ReactDOM.createRoot(div);
+            intDiv.render(dropdown);
             return div;
         },
     };
@@ -53,11 +72,11 @@ const Home =()=> {
 
 
 
-            {benefit && benefit.length >= 0 && (
+            {benefitTable && benefitTable.length >= 0 && (
                 <UbitsTable
                     sticky={true}
                     header={UserTableHeader as any}
-                    data={benefit[0]}
+                    data={benefitTable}
                     template={UserTableTemplate}
                     headerColor={'tertiary' as any}
                     style={{ width: '100%', marginBottom: '20px' }}

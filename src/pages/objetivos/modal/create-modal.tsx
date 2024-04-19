@@ -19,11 +19,11 @@ const CreateBenefitModal = ({
                                  }: CreateModalProps) => {
     return (
         <UbitsModal open={open} onCloseModal={() => accept()}>
-            <UbitsModalHeader headerTitle="¡Crea tu beneficio!" />
+            <UbitsModalHeader headerTitle="¡Crea tus objetivos!" />
             <UbitsModalContent>
                 <div className="create-benefit-modal">
                     <UbitsInput
-                        label={'Nombre objetivo'}
+                        label={'Nombre del objetivo'}
                         required
                     />
 
@@ -36,7 +36,7 @@ const CreateBenefitModal = ({
                     />
 
                     <UbitsInput
-                        label={'UBITS Coin'}
+                        label={'Valor en UBITS Coin'}
                         type={InputTypeEnum.Number}
                         required
                     />

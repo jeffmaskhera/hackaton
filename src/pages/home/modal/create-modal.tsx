@@ -36,7 +36,7 @@ const CreateBenefitModal = ({
                     />
 
                     <UbitsInput
-                        label={'Valor'}
+                        label={'UBITS Coin'}
                         required
                     />
 

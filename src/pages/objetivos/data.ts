@@ -13,7 +13,7 @@ export const UserTableHeader: any = [
 
     {
         id: 'count',
-        text: 'Cantidad monedas',
+        text: 'UBITS Coin',
         align: 'left',
     },
     {

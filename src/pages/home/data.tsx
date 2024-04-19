@@ -108,7 +108,7 @@ export const UserTableHeaderHistory: any = [
     },
     {
         id: 'coin',
-        text: 'Precio',
+        text: 'UBITS Coin',
         align: 'left',
     }
 ];
@@ -121,34 +121,34 @@ export const historicTable:any = [
         user: "Jefrey Sánchez",
         date: "15-05-2024",
         benefit: "Se ganó una camioneta 0km marca Volvo",
-        coin: '1000 monedas'
+        coin: '1000 UBITS Coin'
     },
     {
         id: 2,
         user: "María Rodríguez",
         date: "20-06-2024",
         benefit: "Recibió un bono por desempeño excepcional",
-        coin: '500 monedas'
+        coin: '500 UBITS Coin'
     },
     {
         id: 3,
         user: "Pedro López",
         date: "10-07-2024",
         benefit: "Aprovechó descuentos corporativos en viajes",
-        coin: '300 monedas'
+        coin: '300 UBITS Coin'
     },
     {
         id: 4,
         user: "Ana García",
         date: "25-08-2024",
         benefit: "Obtuvo un ascenso a un nuevo puesto",
-        coin: '700 monedas'
+        coin: '700 UBITS Coin'
     },
     {
         id: 5,
         user: "Carlos Martínez",
         date: "05-09-2024",
         benefit: "Participó en el programa de bienestar y ganó un viaje de vacaciones",
-        coin: '800 monedas'
+        coin: '800 UBITS Coin'
     }
 ];

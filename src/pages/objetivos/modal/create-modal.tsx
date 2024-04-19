@@ -36,7 +36,7 @@ const CreateBenefitModal = ({
                     />
 
                     <UbitsInput
-                        label={'Cantidad monedas'}
+                        label={'UBITS Coin'}
                         type={InputTypeEnum.Number}
                         required
                     />
